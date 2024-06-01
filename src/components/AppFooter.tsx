@@ -5,7 +5,6 @@ import { CFooter } from '@coreui/react'
 const AppFooter: React.FC = () => {
   return (
     <CFooter className="px-4">
-      <h1>Teste</h1>
     </CFooter>
   )
 }

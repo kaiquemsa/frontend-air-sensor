@@ -1,10 +1,8 @@
 // @ts-nocheck
-import React, { Suspense, useEffect } from 'react'
+import React, { Suspense, useEffect, useState, startTransition } from 'react'
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import ProtectedRoute from '../src/services/ProtectedRoute';
 
-import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
 
 // Containers
@@ -20,53 +18,36 @@ const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 const App: React.FC = () => {
-  const { isColorModeSet, setColorMode } = useColorModes('coreui-free-react-admin-template-theme');
-  const storedTheme = useSelector((state: any) => state.theme);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const login = () => {
+    startTransition(() => {
+      setIsAuthenticated(true);
+    });
+  };
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.href.split('?')[1]);
-    const themeParam = urlParams.get('theme');
-    const theme = themeParam && themeParam.match(/^[A-Za-z0-9\s]+/)?.[0];
-
-    if (theme) {
-      setColorMode(theme);
-    }
-
-    if (isColorModeSet()) {
-      return;
-    }
-
-    setColorMode(storedTheme);
-  }, []);
+  const logout = () => {
+    startTransition(() => {
+      setIsAuthenticated(false);
+    });
+  };
 
   return (
     <HashRouter>
-      <Suspense
-        fallback={
-          <div className="pt-3 text-center">
-            {/* <CSpinner color="primary" variant="grow" /> */}
-          </div>
-        }
-      >
-        <Routes>
-          {/* Rota padrão com DefaultLayout */}
-          <Route element={<DefaultLayout />}>
-            {/* Todas as outras rotas */}
-            <Route path="/" caseSensitive element={<Home />} />
-            <Route path="/login" caseSensitive element={<Login />} />
-            <Route path="/register" caseSensitive element={<Register />} />
-            <Route path="/404" caseSensitive element={<Page404 />} />
-            <Route path="/500" caseSensitive element={<Page500 />} />
+      <Routes>
+        {/* Rotas que não usam o DefaultLayout */}
+        <Route path="/login" caseSensitive element={<Login login={login} />} />
+        <Route path="/register" caseSensitive element={<Register />} />
+        <Route path="/404" caseSensitive element={<Page404 />} />
+        <Route path="/500" caseSensitive element={<Page500 />} />
 
-            {/* Rotas protegidas */}
-            <Route path="/dashboard" element={<ProtectedRoute element={Dashboard} />} />
-            <Route path="/dashboard_predicts" element={<ProtectedRoute element={Dashboard_Predicts} />} />
-
-            {/* Redirecionar para 404 se a rota não for encontrada */}
-            <Route path="*" element={<Navigate to="/404" />} />
-          </Route>
-        </Routes>
-      </Suspense>
+        {/* Rotas que usam o DefaultLayout */}
+        <Route element={<DefaultLayout />}>
+          <Route path="/" caseSensitive element={<Home />} />
+          <Route path="/dashboard" element={<ProtectedRoute isAuthenticated={isAuthenticated} element={Dashboard} />} />
+          <Route path="/dashboard_predicts" element={<ProtectedRoute isAuthenticated={isAuthenticated} element={Dashboard_Predicts} />} />
+          <Route path="*" element={<Navigate to="/404" />} />
+        </Route>
+      </Routes>
     </HashRouter>
   );
 }

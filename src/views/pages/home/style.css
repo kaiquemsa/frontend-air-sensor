@@ -27,7 +27,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
   align-items: center;
-  max-width: 1000px;
+  width: 100%;
 }
 
 .main div {
@@ -36,7 +36,7 @@
 
 .main h1 {
   color: #fff;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -171,7 +171,6 @@
 
 /* BoxNew2 CSS */
 .box-new2 {
-  width: 1100px;
   text-align: center;
 }
 
@@ -285,7 +284,6 @@
   align-items: center;
   justify-content: flex-end;
   position: relative;
-  max-width: 1200px;
 }
 
 @media (max-width: 768px) {

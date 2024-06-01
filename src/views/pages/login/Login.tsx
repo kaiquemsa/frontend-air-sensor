@@ -18,8 +18,10 @@ import {
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import authUser from '../../../services/authUser'
+import { useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,14 +29,15 @@ const Login: React.FC = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    try {
-      const user = await authUser.authUser({ username, password });
-      console.log('User authenticated:', user);
-      localStorage.setItem('authToken', user.token);
-      history.push('/dashboard');
-    } catch (error) {
-      setError('Erro ao autenticar. Por favor, verifique suas credenciais.');
-    }
+    const user = await authUser.authUser({ username, password }).then((response) => {
+      console.log(response);
+      if (response) {
+        localStorage.setItem('authToken', 'Autenticado');
+        navigate('/');
+      } else {
+        setError('Erro ao autenticar. Por favor, verifique suas credenciais.');
+      }
+    });
   };
 
   return (

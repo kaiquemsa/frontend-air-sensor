@@ -13,6 +13,7 @@ import {
 import CIcon from '@coreui/icons-react'
 import { Link } from 'react-router-dom'
 import { AppSidebarNav } from './AppSidebarNav'
+import Logo from '../assets/images/logo.png'
 
 // sidebar nav config
 import navigation from '../_nav';
@@ -32,13 +33,11 @@ const AppSidebar: React.FC = () => {
       onVisibleChange={(visible) => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
+      style={{backgroundColor: '#575757'}}
     >
-      <CSidebarHeader className="border-bottom">
-        <Link to="/">
-        <CSidebarBrand>
-          <CIcon customClassName="sidebar-brand-full" height={32} />
-          <CIcon customClassName="sidebar-brand-narrow" height={32} />
-        </CSidebarBrand>
+      <CSidebarHeader className="border-bottom" style={{backgroundColor: '#575757'}}>
+        <Link to="/" style={{display: 'flex', justifyContent: 'center'}}>
+          <img src={Logo} alt="" style={{width: '50%'}}/>
         </Link>
         <CCloseButton
           className="d-lg-none"

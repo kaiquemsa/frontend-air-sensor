@@ -16,7 +16,7 @@ const Home: React.FC = () => {
           </h6>
         </div>
         <div className="column-image">
-          <img src={capa} alt="Woman make searching" style={{width: '100%'}}/>
+          <img src={capa} alt="Woman make searching" style={{width: '80%', borderRadius: 10}}/>
         </div>
       </div>
       <div className="box-new">
@@ -34,15 +34,9 @@ const Home: React.FC = () => {
         </div>
       </div>
       <div className="box-new2">
-        <h1>Impacto e resultados nas escolas!</h1>
+        <h1>Impacto e resultados da qualidade do ar</h1>
         <h6>
-          Propagar conhecimento e despertar novas habilidades é um dos nossos
-          objetivos e motivações. Em nossos projetos, sempre apreciamos o
-          feedback e retorno de nossos parceiros e alunos.
-        </h6>
-        <h6>
-          Abaixo você pode conferir os resultados que tivemos em nossas
-          aplicações até o momento:
+
         </h6>
       </div>
     </div>
