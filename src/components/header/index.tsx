@@ -1,5 +1,5 @@
 import { Menu, MenuPage } from "../Menu";
-import { Button } from "../../components/Button";
+import { Button } from "../Button";
 
 import { Box } from "./styles";
 
