@@ -11,11 +11,16 @@ interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ action, page }) => {
+  const auth = localStorage.getItem('authToken');
+  console.log(auth);
+
   return (
     <Box className={action ? "activyColor" : ""}>
       <img src={LogoHero} alt="Logo Hero Header" width={80} height={80} />
       <Menu page={page} />
-      <Button />
+      {
+        auth === 'Autenticado' ? null : <Button />
+      }
     </Box>
   );
 };
