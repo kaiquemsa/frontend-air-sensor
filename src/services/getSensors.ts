@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { enviroment } from '../env/enviroment';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = enviroment.baseURL;
 
 const getAllSensors = async () => {
   try {
