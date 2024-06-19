@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   MDBBtn,
   MDBContainer,
@@ -14,6 +15,12 @@ from 'mdb-react-ui-kit';
 
 const Login: React.FC = () => {
     const [showRegister, setShowRegister] = useState(false);
+
+    const navigate = useNavigate(); 
+
+    const handleGoBack = () => {
+      navigate('/'); 
+    };
   
     const toggleForm = () => {
       setShowRegister(!showRegister);
@@ -55,6 +62,7 @@ const Login: React.FC = () => {
                     </p>
                   </>
                 )}
+                <MDBBtn onClick={handleGoBack} color='primary'>Back to Home</MDBBtn>
               </MDBCardBody>
             </MDBCol>
           </MDBRow>

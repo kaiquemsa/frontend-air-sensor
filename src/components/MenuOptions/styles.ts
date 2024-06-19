@@ -10,7 +10,7 @@ export const Container = styled.li`
     a {
         color: #1E255E;
         &[data-selected="true"] {
-            color: #d32034;
+            color: #345995;
             
         }
         &:hover {

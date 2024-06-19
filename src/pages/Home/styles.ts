@@ -32,7 +32,7 @@ export const Main = styled.main`
   }
 
   h1 {
-    color: #1f303f;
+    color: #345995;
     font-size: 56px;
     font-weight: bold;
   }
@@ -54,7 +54,7 @@ export const Main = styled.main`
    }
 
    h1 {
-    color: #1f303f;
+    color: #345995;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -98,7 +98,7 @@ export const ColumnImage = styled.div`
 
 export const BoxNew = styled.div`
   width: 100%;
-  background-color: #1f303f;
+  background-color: #345995;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,7 +136,7 @@ export const BoxInter = styled.div`
   left: 0px;
   width: 500px;
   height: 400px;
-  background-color: #1f303f;
+  background-color: #345995;
   border-radius: 20px;
   text-align: justify;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
@@ -178,7 +178,7 @@ export const BoxNew2 = styled.div`
   width: 1100px;
   text-align: center;
   h1 {
-    color: #1f303f;
+    color: #345995;
     font-size: 34px;
     font-weight: bold;
     margin: 25px;
@@ -201,7 +201,7 @@ export const BoxNew3 = styled.div`
   width: 1100px;
   text-align: start;
   h1 {
-    color: #1f303f;
+    color: #345995;
     font-size: 34px;
     margin: 25px;
   }
@@ -255,7 +255,7 @@ export const CardContainer = styled.div`
   max-width: 1000px;
     h6{
     font-size: 24px;
-    color: #1f303f;
+    color: #345995;
   }
   @media (max-width: 768px) {
     display: flex;
@@ -309,7 +309,7 @@ export const TitleContainer = styled.div`
   }
   a{
     font-weight: 500;
-    color: #1f303f;
+    color: #345995;
     text-align: justify;
     max-width: 100px;
   }

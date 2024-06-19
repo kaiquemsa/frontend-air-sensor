@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button`
     width: 150px;
     height: 50px;
-    border: 2px solid #d32034;
-    color: #d32034;
+    border: 2px solid #345995;
+    color: #345995;
     font-size: 16px;
     margin-left: 25px;
     border-radius: 5px;
@@ -38,7 +38,7 @@ export const Container = styled.button`
     width: 148px;
     height: 48px;
     border-radius: 4px;
-    background-color: #d32034;
+    background-color: #345995;
     }
 
     @media (max-width: 768px){

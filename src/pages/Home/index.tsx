@@ -94,8 +94,8 @@ const Home: React.FC = () => {
           <CircleProgress>
             <Circle
               progress={92}
-              progressColor="#1f303f"
-              textColor="#1f303f"
+              progressColor="#345995"
+              textColor="#345995"
               size="150px"
               roundedStroke
             />
@@ -104,8 +104,8 @@ const Home: React.FC = () => {
           <CircleProgress>
             <Circle
               progress={97}
-              progressColor="#1f303f"
-              textColor="#1f303f"
+              progressColor="#345995"
+              textColor="#345995"
               size="150px"
               roundedStroke
             />
@@ -114,8 +114,8 @@ const Home: React.FC = () => {
           <CircleProgress>
             <Circle
               progress={100}
-              progressColor="#1f303f"
-              textColor="#1f303f"
+              progressColor="#345995"
+              textColor="#345995"
               size="150px"
               roundedStroke
             />
@@ -124,8 +124,8 @@ const Home: React.FC = () => {
           <CircleProgress>
             <Circle
               progress={100}
-              progressColor="#1f303f"
-              textColor="#1f303f"
+              progressColor="#345995"
+              textColor="#345995"
               size="150px"
               roundedStroke
             />

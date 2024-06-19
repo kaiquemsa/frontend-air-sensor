@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.button`
   position: relative;
   background-color: #fff;
-  color: #1f303f;
+  color: #345995;
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
