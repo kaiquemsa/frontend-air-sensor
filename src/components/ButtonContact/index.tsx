@@ -5,7 +5,7 @@ const ButtonContact: React.FC = () => {
   const navigation = useNavigate();
   return (
     <>
-      <a onClick={() => navigation("/sobrenos")}>
+      <a onClick={() => navigation("/dashboard")}>
         <Container>Saiba mais</Container>
       </a>
     </>

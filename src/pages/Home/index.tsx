@@ -53,8 +53,8 @@ const Home: React.FC = () => {
           <div>
             <h1>Olá! Bem-vindo.</h1>
             <h6>
-              Somos uma startup jovem e nos propomos a democratizar a educação
-              no Brasil através da robótica
+              Somos uma startup jovem e nos propomos a encarar desafios
+              no Brasil através de códigos
             </h6>
             <ButtonContact />
           </div>
@@ -67,23 +67,23 @@ const Home: React.FC = () => {
             <img src={Man} />
             <BoxInter>
               <h1>
-                Somos a EdTech que está revolucionando a robótica educacional no
+                Somos a MADs que está revolucionando no
                 Brasil
               </h1>
               <h6>
-                Propagar a possibilidade de crianças e jovens despertarem suas
-                habilidades através de nossas soluções inovadoras é o
+                Propagar a possibilidade de melhores de resultados 
+                através de nossas soluções inovadoras é o
                 combustível que nos move a seguir inovando.
               </h6>
             </BoxInter>
           </ContainerImage>
         </BoxNew>
         <BoxNew2>
-          <h1>Impacto e resultados nas escolas!</h1>
+          <h1>Impacto e resultados!</h1>
           <h6>
             Propagar conhecimento e despertar novas habilidades é um dos nossos
             objetivos e motivações. Em nossos projetos, sempre apreciamos o
-            feedback e retorno de nossos parceiros e alunos.
+            feedback.
           </h6>
           <h6>
             Abaixo você pode conferir os resultados que tivemos em nossas
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
               size="150px"
               roundedStroke
             />
-            <h6>Melhora no raciocínio lógico e interesse por exatas 😍</h6>
+            <h6>Melhora no raciocínio lógico e interesse</h6>
           </CircleProgress>
           <CircleProgress>
             <Circle
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
               size="150px"
               roundedStroke
             />
-            <h6>Crianças de 5 a 11 anos que aprenderam a programar 🥰</h6>
+            <h6>Resultados expressantes</h6>
           </CircleProgress>
           <CircleProgress>
             <Circle
@@ -119,7 +119,7 @@ const Home: React.FC = () => {
               size="150px"
               roundedStroke
             />
-            <h6>Crianças que querem seguir aprendendo robótica 😱</h6>
+            <h6>Oportunidades criadas de acordo</h6>
           </CircleProgress>
           <CircleProgress>
             <Circle
@@ -129,87 +129,9 @@ const Home: React.FC = () => {
               size="150px"
               roundedStroke
             />
-            <h6>Amaram o universo SamucaE da SamEdu! 🥳</h6>
+            <h6>Aprovaram os resultados</h6>
           </CircleProgress>
         </CircleContainer>
-        <BoxNew>
-          <h1>Alcance SamEdu até o momento👨‍🚀</h1>
-          <h6>Estamos em expansão contínua!</h6>
-          <CardContainer>
-            <CardHome>
-              <h6>15+ Escolas</h6>
-            </CardHome>
-            <CardHome>
-              <h6>1000+ Alunos</h6>
-            </CardHome>
-            <CardHome>
-              <h6>10+ Projetos</h6>
-            </CardHome>
-          </CardContainer>
-        </BoxNew>
-        <BoxNew3>
-          <h1>Apoio e parceiros</h1>
-          <h6>
-            Nossos projetos só acontecem por meio de nossos apoiadores e
-            parceiros que acreditam em nosso trabalho e nossas soluções!
-          </h6>
-          <ParcContainer>
-            <CardParc>
-              <TitleContainer>
-                <h1>AEAS</h1>
-                <a href="https://www.unicef.org/brazil/" target="_blank">
-                  {" "}
-                  aeas.org.br
-                </a>
-              </TitleContainer>
-              <ImgAEAS src={AEAS} />
-            </CardParc>
-            <CardParc>
-              <TitleContainer>
-                <h1>Mato Verde</h1>
-                <a href="https://www.matoverde.mg.gov.br/" target="_blank">
-                  {" "}
-                  matoverde.mg.gov.br
-                </a>
-              </TitleContainer>
-              <img
-                src={MatoVerde}
-                style={{ width: 120, height: 100, padding: "4px" }}
-              />
-            </CardParc>
-          </ParcContainer>
-          <ParcContainer>
-            <CardParc>
-              <TitleContainer>
-                <h1>CEETIMAV</h1>
-                <a
-                  href="https://www.facebook.com/smeducacaoecultura"
-                  target="_blank"
-                >
-                  {" "}
-                  smeducacaoecultura
-                </a>
-              </TitleContainer>
-              <img
-                src={CEETIMAV}
-                style={{ width: 90, height: 128, padding: "4px" }}
-              />
-            </CardParc>
-            <CardParc>
-              <TitleContainer>
-                <h1>SEDETTUR</h1>
-                <a
-                  href="https://desenvolvimentoeconomico.sorocaba.sp.gov.br/"
-                  target="_blank"
-                >
-                  {" "}
-                  deveconomic
-                </a>
-              </TitleContainer>
-              <img src={SEDITUR} style={{ width: 100, height: 128 }} />
-            </CardParc>
-          </ParcContainer>
-        </BoxNew3>
         <Footer />
       </Container>
     </>
