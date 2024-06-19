@@ -12,9 +12,46 @@ import {
   MDBInput
 }
 from 'mdb-react-ui-kit';
+import authUser from '../../services/authUser';
+import setUser from '../../services/setUser';
 
 const Login: React.FC = () => {
     const [showRegister, setShowRegister] = useState(false);
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
+
+    const [newUsername, setNewUsername] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+
+    const handleLogin = async (event:any) => {
+      event.preventDefault();
+      const user = await authUser.authUser({ username, password }).then((response) => {
+        console.log(response);
+        if (response) {
+          localStorage.setItem('authToken', 'Autenticado');
+          navigate('/');
+        } else {
+          // setError('Erro ao autenticar. Por favor, verifique suas credenciais.');
+        }
+      });
+    };
+
+    const handleRegister = async (event:any) => {
+      event.preventDefault();
+      const user = await setUser.setUser({ newUsername, newPassword }).then((response) => {
+        console.log(response);
+        if (response) {
+          localStorage.setItem('authToken', 'Autenticado');
+          navigate('/');
+        } else {
+          // setError('Erro ao autenticar. Por favor, verifique suas credenciais.');
+        }
+      });
+    }
+
+
 
     const navigate = useNavigate(); 
 
@@ -44,19 +81,40 @@ const Login: React.FC = () => {
                 </h5>
                 {showRegister ? (
                   <>
-                    <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg"/>
-                    <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-                    <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
-                    <MDBBtn className="mb-4 px-5" color='dark' size='lg'>Register</MDBBtn>
+                    <MDBInput wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg"                       
+                      value={newUsername} 
+                      onChange={(e) => setNewUsername(e.target.value)}  
+                    />
+                    <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"
+                      value={newPassword} 
+                      onChange={(e) => setNewPassword(e.target.value)}
+                    />
+                    <MDBBtn className="mb-4 px-5" color='dark' size='lg' onClick={handleRegister}>Register</MDBBtn>
                     <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>
                       Already have an account? <a href="#!" onClick={toggleForm} style={{ color: '#393f81' }}>Sign in here</a>
                     </p>
                   </>
                 ) : (
                   <>
-                    <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
-                    <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
-                    <MDBBtn className="mb-4 px-5" color='dark' size='lg'>Login</MDBBtn>
+                    <MDBInput 
+                      wrapperClass='mb-4' 
+                      label='Username' 
+                      id='formControlLg' 
+                      type='email' 
+                      size="lg" 
+                      value={username} 
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <MDBInput 
+                      wrapperClass='mb-4' 
+                      label='Password' 
+                      id='formControlLg' 
+                      type='password' 
+                      size="lg"
+                      value={password} 
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <MDBBtn className="mb-4 px-5" color='dark' size='lg' onClick={handleLogin}>Login</MDBBtn>
                     <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>
                       Don't have an account? <a href="#!" onClick={toggleForm} style={{ color: '#393f81' }}>Register here</a>
                     </p>

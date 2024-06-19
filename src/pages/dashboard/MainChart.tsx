@@ -206,7 +206,7 @@ const MainChartMoinsture: React.FC<{ selectedPeriod: string }> = ({ selectedPeri
           labels: formattedDates,
           datasets: [
             {
-              label: 'My First dataset',
+              label: '',
               backgroundColor: `rgba(${getStyle('--cui-info-rgb')}, .1)`,
               borderColor: getStyle('--cui-info'),
               pointHoverBackgroundColor: getStyle('--cui-info'),

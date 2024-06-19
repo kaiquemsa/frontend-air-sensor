@@ -48,9 +48,6 @@ const DashboardPredict: React.FC = () => {
               </h4>
             </CCol>
             <CCol sm={7} className="d-none d-md-block">
-              <CButton color="primary" className="float-end">
-                <CIcon icon={cilCloudDownload} />
-              </CButton>
               <CButtonGroup className="float-end me-3">
                 {['1 Day', '7 Days', '30 Days'].map((value) => (
                   <CButton
